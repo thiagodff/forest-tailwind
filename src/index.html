@@ -401,5 +401,94 @@
         </div>
       </div>
     </section>
+
+    <!-- Contato -->
+    <section
+      id="contact"
+      class="container gap-8 mb-12 sm:mb-16 grid lg:grid-cols-2"
+    >
+      <div>
+        <h1 class="font-serif text-4xl text-forest-300 mb-4">
+          Nossos Contatos
+        </h1>
+        <p class="text-gray-200 text-balance mb-8">
+          Tem interesse em passar uma temporada na Forest? Entre em contato com
+          a gente por telefone ou email.
+        </p>
+        <div>
+          <div>
+            <span class="h-0.5 w-6 bg-forest-400 inline-block"></span>
+            <h2 class="mb-2 text-2xl text-forest-300 font-serif">Base</h2>
+            <p class="text-gray-300">
+              Rua da Mata, 123 - Floresta Nacional - RJ
+            </p>
+          </div>
+          <div>
+            <span class="h-0.5 w-6 bg-forest-400 inline-block"></span>
+            <h2 class="mb-2 text-2xl text-forest-300 font-serif">Email</h2>
+            <p class="text-gray-300">contato@forest.com</p>
+          </div>
+          <div>
+            <span class="h-0.5 w-6 bg-forest-400 inline-block"></span>
+            <h2 class="mb-2 text-2xl text-forest-300 font-serif">Telefone</h2>
+            <p class="text-gray-300">21 99999-9999</p>
+          </div>
+        </div>
+      </div>
+      <form
+        action=""
+        class="grid gap-4 rounded-xl bg-forest-900 shadow-2xl p-4 lg:p-8"
+      >
+        <div class="grid gap-1">
+          <label for="name" class="text-white">Nome</label>
+          <input
+            id="name"
+            name="name"
+            class="rounded-md border-2 border-forest-800 bg-forest-800 p-2 text-white focus:outline-none focus:ring-2 focus:ring-forest-400 focus:border-green-900 placeholder:text-forest-900"
+            placeholder="Seu nome"
+            type="text"
+          />
+        </div>
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div class="grid gap-1">
+            <label for="email" class="text-white">E-mail</label>
+            <input
+              id="email"
+              name="email"
+              class="rounded-md border-2 border-forest-800 bg-forest-800 p-2 text-white focus:outline-none focus:ring-2 focus:ring-forest-400 focus:border-green-900 placeholder:text-forest-900"
+              placeholder="email@example.com"
+              type="email"
+            />
+          </div>
+          <div class="grid gap-1">
+            <label for="phone" class="text-white">Telefone</label>
+            <input
+              id="phone"
+              name="phone"
+              class="rounded-md border-2 border-forest-800 bg-forest-800 p-2 text-white focus:outline-none focus:ring-2 focus:ring-forest-400 focus:border-green-900 placeholder:text-forest-900"
+              placeholder="(99) 99999-9999"
+              type="text"
+            />
+          </div>
+        </div>
+        <div class="grid gap-1">
+          <label for="message" class="text-white">Mensagem</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            class="resize-none rounded-md border-2 border-forest-800 bg-forest-800 p-2 text-white focus:outline-none focus:ring-2 focus:ring-forest-400 focus:border-green-900 placeholder:text-forest-900"
+            placeholder=""
+            type="text"
+          ></textarea>
+        </div>
+        <button
+          class="place-self-start bg-forest-400 text-forest-900 py-2 px-4 inline-block rounded-full"
+          type="submit"
+        >
+          Enviar E-mail
+        </button>
+      </form>
+    </section>
   </body>
 </html>
