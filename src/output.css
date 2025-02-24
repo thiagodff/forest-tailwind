@@ -1011,6 +1011,15 @@
       border-bottom-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
     }
   }
+  .divide-y-2 {
+    :where(& > :not(:last-child)) {
+      --tw-divide-y-reverse: 0;
+      border-bottom-style: var(--tw-border-style);
+      border-top-style: var(--tw-border-style);
+      border-top-width: calc(2px * var(--tw-divide-y-reverse));
+      border-bottom-width: calc(2px * calc(1 - var(--tw-divide-y-reverse)));
+    }
+  }
   .divide-y-reverse {
     :where(& > :not(:last-child)) {
       --tw-divide-y-reverse: 1;
@@ -1019,6 +1028,11 @@
   .divide-forest-800 {
     :where(& > :not(:last-child)) {
       border-color: var(--color-forest-800);
+    }
+  }
+  .divide-forest-900 {
+    :where(& > :not(:last-child)) {
+      border-color: var(--color-forest-900);
     }
   }
   .place-self-auto {
@@ -1464,6 +1478,9 @@
   }
   .py-2 {
     padding-block: calc(var(--spacing) * 2);
+  }
+  .py-4 {
+    padding-block: calc(var(--spacing) * 4);
   }
   .py-8 {
     padding-block: calc(var(--spacing) * 8);
@@ -2138,6 +2155,13 @@
       display: flex;
     }
   }
+  .\*\:\*\:max-h-8 {
+    :is(& > *) {
+      :is(& > *) {
+        max-height: calc(var(--spacing) * 8);
+      }
+    }
+  }
   .\*\:items-center {
     :is(& > *) {
       align-items: center;
@@ -2156,6 +2180,11 @@
   .\*\:rounded-xl {
     :is(& > *) {
       border-radius: var(--radius-xl);
+    }
+  }
+  .\*\:p-4 {
+    :is(& > *) {
+      padding: calc(var(--spacing) * 4);
     }
   }
   .group-hover\:scale-110 {
@@ -2264,6 +2293,17 @@
       margin-bottom: calc(var(--spacing) * 4);
     }
   }
+  .max-sm\:divide-y-2 {
+    @media (width < 40rem) {
+      :where(& > :not(:last-child)) {
+        --tw-divide-y-reverse: 0;
+        border-bottom-style: var(--tw-border-style);
+        border-top-style: var(--tw-border-style);
+        border-top-width: calc(2px * var(--tw-divide-y-reverse));
+        border-bottom-width: calc(2px * calc(1 - var(--tw-divide-y-reverse)));
+      }
+    }
+  }
   .max-sm\:px-4 {
     @media (width < 40rem) {
       padding-inline: calc(var(--spacing) * 4);
@@ -2332,6 +2372,23 @@
       border-radius: calc(infinity * 1px);
     }
   }
+  .sm\:border-t-2 {
+    @media (width >= 40rem) {
+      border-top-style: var(--tw-border-style);
+      border-top-width: 2px;
+    }
+  }
+  .sm\:border-b-2 {
+    @media (width >= 40rem) {
+      border-bottom-style: var(--tw-border-style);
+      border-bottom-width: 2px;
+    }
+  }
+  .sm\:border-forest-900 {
+    @media (width >= 40rem) {
+      border-color: var(--color-forest-900);
+    }
+  }
   .sm\:bg-forest-950 {
     @media (width >= 40rem) {
       background-color: var(--color-forest-950);
@@ -2345,6 +2402,11 @@
   .sm\:py-1 {
     @media (width >= 40rem) {
       padding-block: calc(var(--spacing) * 1);
+    }
+  }
+  .sm\:py-8 {
+    @media (width >= 40rem) {
+      padding-block: calc(var(--spacing) * 8);
     }
   }
   .sm\:py-16 {
