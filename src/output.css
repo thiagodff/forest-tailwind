@@ -397,6 +397,9 @@
   .mt-4 {
     margin-top: calc(var(--spacing) * 4);
   }
+  .mb-0 {
+    margin-bottom: calc(var(--spacing) * 0);
+  }
   .mb-2 {
     margin-bottom: calc(var(--spacing) * 2);
   }
@@ -408,6 +411,9 @@
   }
   .mb-12 {
     margin-bottom: calc(var(--spacing) * 12);
+  }
+  .mb-40 {
+    margin-bottom: calc(var(--spacing) * 40);
   }
   .box-border {
     box-sizing: border-box;
@@ -968,6 +974,9 @@
   }
   .gap-8 {
     gap: calc(var(--spacing) * 8);
+  }
+  .gap-12 {
+    gap: calc(var(--spacing) * 12);
   }
   .space-y-4 {
     :where(& > :not(:last-child)) {
@@ -2235,6 +2244,13 @@
       transition-duration: var(--tw-duration, var(--default-transition-duration));
     }
   }
+  .hover\:text-forest-300 {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-forest-300);
+      }
+    }
+  }
   .hover\:no-underline {
     &:hover {
       @media (hover: hover) {
@@ -2291,6 +2307,21 @@
   .max-sm\:mb-4 {
     @media (width < 40rem) {
       margin-bottom: calc(var(--spacing) * 4);
+    }
+  }
+  .max-sm\:flex-col {
+    @media (width < 40rem) {
+      flex-direction: column;
+    }
+  }
+  .max-sm\:flex-col-reverse {
+    @media (width < 40rem) {
+      flex-direction: column-reverse;
+    }
+  }
+  .max-sm\:gap-4 {
+    @media (width < 40rem) {
+      gap: calc(var(--spacing) * 4);
     }
   }
   .max-sm\:divide-y-2 {
@@ -2397,6 +2428,11 @@
   .sm\:p-8 {
     @media (width >= 40rem) {
       padding: calc(var(--spacing) * 8);
+    }
+  }
+  .sm\:p-12 {
+    @media (width >= 40rem) {
+      padding: calc(var(--spacing) * 12);
     }
   }
   .sm\:py-1 {
