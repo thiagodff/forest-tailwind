@@ -85,11 +85,22 @@
       <div
         class="text-white bg-gradient-to-t from-forest-900/80 relative px-8 pb-8 pt-64 max-sm:px-4 max-sm:pt-12 rounded-2xl overflow-hidden"
       >
-        <img
+        <!-- <img
           class="absolute inset-0 -z-10 size-full object-cover"
           src="./img/floresta.jpg"
           alt="forest"
-        />
+        /> -->
+        <video
+          id="video"
+          class="absolute inset-0 -z-10 size-full object-cover animate-fade-in"
+          src="./img/video_chuva.mp4"
+          width="1280"
+          height="720"
+          muted
+          autoplay
+          playsinline
+          loop
+        ></video>
         <div
           class="bg-forest-950/60 flex flex-col items-start gap-2 p-4 mb-8 sm:gap-8 rounded-xl sm:items-center sm:bg-forest-950 sm:py-1 sm:pl-4 sm:pr-1 sm:inline-flex sm:rounded-full sm:flex-row"
         >
@@ -584,6 +595,28 @@
         mobileMenu.classList.add("hidden");
         mobileMenu.classList.remove("flex");
       });
+
+      const video = document.getElementById("video");
+      const temperature = document.getElementById("temperature");
+      const weather = document.getElementById("weather");
+      const day = document.getElementById("day");
+
+      const randomTemperature = Math.floor(Math.random() * 10 + 20);
+      temperature.innerText = `${randomTemperature}°`;
+      weather.innerText =
+        randomTemperature < 25
+          ? `🌧️ ${Math.floor(Math.random() * 100)}%`
+          : "⛅️";
+
+      const date = new Date();
+      day.innerText = date
+        .toLocaleDateString("pt-BR", { weekday: "long" })
+        .replace("-feira", "");
+
+      video.src =
+        randomTemperature < 25
+          ? "./img/video_chuva.mp4"
+          : "./img/video_sol.mp4";
     </script>
   </body>
 </html>

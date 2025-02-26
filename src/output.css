@@ -60,6 +60,7 @@
     --color-forest-900: #0f1c15;
     --color-forest-950: #030504;
     --animate-slide-in: slideIn 0.4s ease-in-out forwards;
+    --animate-fade-in: fadeIn 0.4s ease-in-out forwards;
   }
 }
 @layer base {
@@ -698,6 +699,9 @@
   }
   .transform-none {
     transform: none;
+  }
+  .animate-fade-in {
+    animation: var(--animate-fade-in);
   }
   .animate-none {
     animation: none;
@@ -2690,6 +2694,14 @@
   100% {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 @property --tw-translate-x {
