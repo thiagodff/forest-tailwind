@@ -9,7 +9,6 @@
       "Courier New", monospace;
     --color-red-500: oklch(0.637 0.237 25.331);
     --color-green-900: oklch(0.393 0.095 152.535);
-    --color-blue-700: oklch(0.488 0.243 264.376);
     --color-gray-50: oklch(0.985 0.002 247.839);
     --color-gray-200: oklch(0.928 0.006 264.531);
     --color-gray-300: oklch(0.872 0.01 258.338);
@@ -60,6 +59,7 @@
     --color-forest-800: #16281f;
     --color-forest-900: #0f1c15;
     --color-forest-950: #030504;
+    --animate-slide-in: slideIn 0.4s ease-in-out forwards;
   }
 }
 @layer base {
@@ -282,17 +282,8 @@
   .-z-10 {
     z-index: calc(10 * -1);
   }
-  .z-10 {
-    z-index: 10;
-  }
-  .z-20 {
-    z-index: 20;
-  }
   .z-40 {
     z-index: 40;
-  }
-  .z-50 {
-    z-index: 50;
   }
   .z-auto {
     z-index: auto;
@@ -404,6 +395,20 @@
   }
   .m-2 {
     margin: calc(var(--spacing) * 2);
+  }
+  .container {
+    margin-inline: auto;
+    padding-inline: 0.5rem;
+    @media (width >= 40rem) {
+      padding-inline: 1rem;
+    }
+  }
+  .container\! {
+    margin-inline: auto !important;
+    padding-inline: 0.5rem !important;
+    @media (width >= 40rem) {
+      padding-inline: 1rem !important;
+    }
   }
   .mx-auto {
     margin-inline: auto;
@@ -696,6 +701,9 @@
   }
   .animate-none {
     animation: none;
+  }
+  .animate-slide-in {
+    animation: var(--animate-slide-in);
   }
   .cursor-pointer {
     cursor: pointer;
@@ -1261,9 +1269,6 @@
   }
   .bg-\[var\(--my_variable\)\] {
     background-color: var(--my_variable);
-  }
-  .bg-blue-700 {
-    background-color: var(--color-blue-700);
   }
   .bg-forest-300 {
     background-color: var(--color-forest-300);
@@ -1904,10 +1909,6 @@
     --tw-blur: blur(8px);
     filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
   }
-  .blur-md {
-    --tw-blur: blur(var(--blur-md));
-    filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
-  }
   .blur-none {
     --tw-blur:  ;
     filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
@@ -2151,6 +2152,18 @@
   .ring-inset {
     --tw-ring-inset: inset;
   }
+  .slide-delay-1 {
+    animation-delay: 100ms;
+  }
+  .slide-delay-2 {
+    animation-delay: 200ms;
+  }
+  .slide-delay-3 {
+    animation-delay: 300ms;
+  }
+  .slide-delay-4 {
+    animation-delay: 400ms;
+  }
   .transform-3d {
     transform-style: preserve-3d;
   }
@@ -2282,13 +2295,6 @@
       transition-duration: var(--tw-duration, var(--default-transition-duration));
     }
   }
-  .hover\:cursor-pointer {
-    &:hover {
-      @media (hover: hover) {
-        cursor: pointer;
-      }
-    }
-  }
   .hover\:text-forest-300 {
     &:hover {
       @media (hover: hover) {
@@ -2300,20 +2306,6 @@
     &:hover {
       @media (hover: hover) {
         text-decoration-line: none;
-      }
-    }
-  }
-  .hover\:underline {
-    &:hover {
-      @media (hover: hover) {
-        text-decoration-line: underline;
-      }
-    }
-  }
-  .hover\:underline-offset-8 {
-    &:hover {
-      @media (hover: hover) {
-        text-underline-offset: 8px;
       }
     }
   }
@@ -2367,11 +2359,6 @@
   .max-lg\:z-50 {
     @media (width < 64rem) {
       z-index: 50;
-    }
-  }
-  .max-lg\:hidden {
-    @media (width < 64rem) {
-      display: none;
     }
   }
   .max-lg\:w-full {
@@ -2649,11 +2636,6 @@
       justify-self: flex-end;
     }
   }
-  .lg\:p-4 {
-    @media (width >= 64rem) {
-      padding: calc(var(--spacing) * 4);
-    }
-  }
   .lg\:p-8 {
     @media (width >= 64rem) {
       padding: calc(var(--spacing) * 8);
@@ -2700,14 +2682,14 @@
     }
   }
 }
-@layer components {
-  .container {
-    margin-inline: auto;
-    width: 100%;
-    padding-inline: calc(var(--spacing) * 2);
-    @media (width >= 40rem) {
-      padding-inline: calc(var(--spacing) * 4);
-    }
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 @property --tw-translate-x {

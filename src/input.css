@@ -8,10 +8,58 @@
   --color-forest-800: #16281f;
   --color-forest-900: #0f1c15;
   --color-forest-950: #030504;
+
+  @keyframes slideIn {
+    0% {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  --animate-slide-in: slideIn 0.4s ease-in-out forwards;
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  --animate-fade-in: fadeIn 0.4s ease-in-out forwards;
 }
 
-@layer components {
+@utility container {
+  margin-inline: auto;
+  padding-inline: 0.5rem;
+  @media (width >= theme(--breakpoint-sm)) {
+    padding-inline: 1rem;
+  }
+}
+
+/* @layer components {
   .container {
     @apply mx-auto w-full px-2 sm:px-4;
   }
+} */
+
+@utility slide-delay-1 {
+  animation-delay: 100ms;
+}
+
+@utility slide-delay-2 {
+  animation-delay: 200ms;
+}
+
+@utility slide-delay-3 {
+  animation-delay: 300ms;
+}
+
+@utility slide-delay-4 {
+  animation-delay: 400ms;
 }
