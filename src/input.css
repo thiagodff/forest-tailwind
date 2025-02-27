@@ -34,18 +34,46 @@
   --animate-fade-in: fadeIn 0.4s ease-in-out forwards;
 }
 
-@utility container {
+/* @utility container {
   margin-inline: auto;
   padding-inline: 0.5rem;
   @media (width >= theme(--breakpoint-sm)) {
     padding-inline: 1rem;
   }
-}
+} */
 
-/* @layer components {
+@layer components {
   .container {
     @apply mx-auto w-full px-2 sm:px-4;
   }
+}
+
+@utility neon {
+  @apply rounded-full border border-forest-200 bg-gradient-to-b from-forest-200 to-forest-400;
+  box-shadow: 0 1px 4px 1px --theme(--color-forest-200 / 25%),
+    inset 0px -1px 2px var(--color-forest-200);
+}
+
+@utility btn {
+  @apply cursor-pointer rounded-full border border-forest-200 bg-gradient-to-b from-forest-200 to-forest-400 text-forest-900 px-5 py-2 transition hover:contrast-200;
+  box-shadow: 0 1px 4px 1px --theme(--color-forest-200 / 25%),
+    inset 0px -1px 2px var(--color-forest-200);
+}
+
+@utility input {
+  @apply rounded-md border-2 border-forest-800 bg-forest-800 p-2 text-white focus:outline-none focus:ring-2 focus:ring-forest-400 focus:border-green-900 placeholder:text-forest-900;
+}
+
+@utility radial-gradient {
+  @apply bg-radial-[50%_100%_at_50%_0%] from-forest-700 from-0% to-forest-800 to-100%;
+}
+
+/* @utility radial-gradient {
+  background-image: radial-gradient(
+    50% 100% at 50% 0%,
+    var(--color-forest-700) 0%,
+    var(--color-forest-800) 100%
+  );
 } */
 
 @utility slide-delay-1 {
