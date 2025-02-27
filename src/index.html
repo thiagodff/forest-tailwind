@@ -1,17 +1,26 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="./output.css" rel="stylesheet" />
     <link rel="icon" href="/favicon.png" type="image/png" />
     <title>Forest</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Text&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body class="bg-forest-800 font-sans text-gray-50">
     <div class="container mt-4 flex justify-center md:justify-start">
       <div class="inline-flex items-center rounded-md bg-forest-900">
         <span class="size-2 block relative -left-1 neon"></span>
-        <div class="flex text-forest-300 divide-x-2 divide-forest-800">
+        <div
+          class="flex text-forest-300 divide-x-2 divide-forest-800 font-mono"
+        >
           <div class="px-4 py-2 capitalize" id="day">segunda</div>
           <div class="px-4 py-2" id="temperature">25°</div>
           <div class="px-4 py-2" id="weather">⛅️</div>
@@ -146,7 +155,7 @@
       <div
         class="content-end bg-[url('./img/padrao.svg')] bg-no-repeat bg-contain bg-left-bottom"
       >
-        <h2 class="text-white mb-2 text-4xl font-serif lg:text-5xl">
+        <h2 class="text-white mb-8 text-4xl font-serif lg:text-5xl">
           Refúgio Natural
         </h2>
         <!-- <ul class="text-gray-200 *:flex *:items-center *:gap-4 space-y-4"> -->

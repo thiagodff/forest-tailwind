@@ -9,6 +9,9 @@
   --color-forest-900: #0f1c15;
   --color-forest-950: #030504;
 
+  --font-sans: "DM Sans", "system-ui", "sans-serif";
+  --font-serif: "DM Serif Text", "Georgia", "serif";
+
   @keyframes slideIn {
     0% {
       opacity: 0;
