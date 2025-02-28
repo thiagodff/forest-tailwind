@@ -1,8 +1,8 @@
-# Forest
+# [Forest](thiagodff.github.io/forest-tailwind/)
 
 ![Forest](./.github/forest.png)
 
-Forest is a project created for learning and experimenting with Tailwind v4.
+[Forest](thiagodff.github.io/forest-tailwind/) is a project created for learning and experimenting with Tailwind v4.
 
 ## Technologies Used
 
